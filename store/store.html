@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location</title>
+    <link rel="stylesheet" type="text/css" href="/resources/reset.css">
+    <link rel="stylesheet" type="text/css" href="store.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+</head>
+<body>
+  <div class="main">
+    <nav class="container">
+      <ul>
+        <li><a href="../index.html" style="text-decoration: none; color: white;"">Home</a></li>
+        <li>Hours</li>
+        <li>Wholesale</li>
+      </ul>
+    </nav>
+    <img src="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/tsunami-coffee/images/logo.png" />
+  </div>
+
+  <div id="map" style="max-width: 100%; height: 500px; text-align: center;"></div>
+  <script>
+    var map = L.map('map').setView([37.7911759,-122.4197441], 18.99);
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 14,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1IjoiaWh1dHRvbiIsImEiOiJja3pkY3hicTIyNWRjMnZwcWthY3AzYXhiIn0.8Ruva4zhFbILNefyONUbcA'
+    }).addTo(map);
+
+    var marker = L.marker([37.7911759,-122.4197441], 18.99).addTo(map);
+  </script>
+  <footer>
+    <div class="container">
+      <div class="copyright">
+        &copy; Tsunami Coffee
+      </div>
+      <nav>
+        <ul>
+          <li>Location</li>
+          <li>Hours</li>
+          <li>Wholesale</li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+    
+</body>
+</html>
